@@ -1,9 +1,10 @@
 #include <Arduino.h>
 #include <ESPAsyncWebServer.h>
 #include <SPIFFS.h>
+#include <WiFi.h>
 
-const char *ssid = "Nom du réseau";
-const char *password = "Mot de passe";
+const char *ssid = "LABTEL_5G";
+const char *password = "49618037";
 
 const int led = 2;
 const int capteurLuminosite = 34;
@@ -38,6 +39,7 @@ void setup()
     file.close();
     file = root.openNextFile();
   }
+  Serial.println("End Files reading");
 
   //----------------------------------------------------WIFI
   WiFi.begin(ssid, password);
